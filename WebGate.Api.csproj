@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebGate.Services\WebGate.Services.csproj" />
     <ProjectReference Include="..\WebGate.Shared\WebGate.Shared.csproj" />
   </ItemGroup>
 
