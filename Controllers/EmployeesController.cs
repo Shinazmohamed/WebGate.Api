@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebGate.Api.Extensions;
-using WebGate.Services.Contracts;
+using WebGate.Business.Contracts;
 using WebGate.Shared;
 using WebGate.Shared.Requests;
 
@@ -11,11 +11,11 @@ namespace WebGate.Api.Controllers
     [Route("api")]
     public class EmployeesController : WebGateControllerBase
     {
-        private readonly IEmployeeService _employeeService;
+        private readonly IEmployeeBusiness _service;
 
-        public EmployeesController(IEmployeeService employeeService)
+        public EmployeesController(IEmployeeBusiness service)
         {
-            _employeeService = employeeService;
+            _service = service;
         }
 
         [HttpPost]
@@ -25,7 +25,7 @@ namespace WebGate.Api.Controllers
         public async Task<IActionResult> CreateUser([FromBody] EmployeeRequest request)
         {
             var userId = User.GetUserId();
-            var response = await _employeeService.CreateEmployee(userId, request);
+            var response = await _service.CreateEmployeeAsync(userId, request);
             return GetActionResult(response);
         }
     }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.Api", "WebGate.Api.csproj", "{840B2CCF-DFE8-468C-8FBF-B829C4B53BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGate.Api", "WebGate.Api.csproj", "{840B2CCF-DFE8-468C-8FBF-B829C4B53BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.Services", "..\WebGate.Services\WebGate.Services.csproj", "{E7747E30-CB6B-4E09-963C-21A0BE6A0454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGate.Services", "..\WebGate.Services\WebGate.Services.csproj", "{E7747E30-CB6B-4E09-963C-21A0BE6A0454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.Repository", "..\WebGate.Repository\WebGate.Repository.csproj", "{DA73B27F-03F2-427C-89CB-C15DF60A77FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGate.Repository", "..\WebGate.Repository\WebGate.Repository.csproj", "{DA73B27F-03F2-427C-89CB-C15DF60A77FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.EntityFramework", "..\WebGate.EntityFramework\WebGate.EntityFramework.csproj", "{CA8100F5-471B-4F5E-8EA8-16047F39974D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGate.EntityFramework", "..\WebGate.EntityFramework\WebGate.EntityFramework.csproj", "{CA8100F5-471B-4F5E-8EA8-16047F39974D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.Shared", "..\WebGate.Shared\WebGate.Shared.csproj", "{EDE1DB45-C0BF-4733-9BB4-27A92FC5A61D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGate.Shared", "..\WebGate.Shared\WebGate.Shared.csproj", "{EDE1DB45-C0BF-4733-9BB4-27A92FC5A61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGate.Business", "..\WebGate.Business\WebGate.Business.csproj", "{8E1FB5D9-5DF4-44FD-8ACC-B8321CE5277C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EDE1DB45-C0BF-4733-9BB4-27A92FC5A61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDE1DB45-C0BF-4733-9BB4-27A92FC5A61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDE1DB45-C0BF-4733-9BB4-27A92FC5A61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1FB5D9-5DF4-44FD-8ACC-B8321CE5277C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1FB5D9-5DF4-44FD-8ACC-B8321CE5277C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1FB5D9-5DF4-44FD-8ACC-B8321CE5277C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1FB5D9-5DF4-44FD-8ACC-B8321CE5277C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
