@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebGate.Api.Extensions;
 using WebGate.EntityFramework;
+using WebGate.EntityFramework.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +12,19 @@ var connectionString = builder.Configuration.GetConnectionString("ApplicationDbC
 builder.Services.AddDbContext<WebGateDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddCors(SetupCors);
+builder.Services.ConfigureIdentity();
+
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options =>
+//    {
+//        // Configure your JWT Bearer authentication options here
+//    });
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddCors(SetupCors);
-builder.Services.ConfigureIdentity();
 
 var app = builder.Build();
 
@@ -30,16 +39,14 @@ app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseCors("AllowAll"); // Place UseCors before UseAuthentication
 
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors("AllowAll");
-
 app.Run();
-
 
 void SetupCors(CorsOptions options)
 {

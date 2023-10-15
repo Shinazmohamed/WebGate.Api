@@ -8,7 +8,7 @@ namespace WebGate.Api.Extensions
     {
         public static void ConfigureIdentity(this IServiceCollection services)
         {
-            services.AddIdentity<User, IdentityRole>(i =>
+            services.AddIdentity<IdentityUser, IdentityRole>(i =>
             {
                 i.Password.RequireDigit = false;
                 i.Password.RequireLowercase = false;
