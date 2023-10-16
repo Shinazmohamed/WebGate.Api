@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using WebGate.EntityFramework.Entities;
 using WebGate.EntityFramework;
 
 namespace WebGate.Api.Extensions
@@ -18,7 +17,6 @@ namespace WebGate.Api.Extensions
             })
             .AddEntityFrameworkStores<WebGateDbContext>()
             .AddDefaultTokenProviders();
-
         }
     }
 }

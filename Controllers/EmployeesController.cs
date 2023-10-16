@@ -7,8 +7,8 @@ using WebGate.Shared.Requests;
 
 namespace WebGate.Api.Controllers
 {
-    [Authorize(Constants.UserRole)]
-    [Produces("application/json")]
+    [Authorize(Roles = Constants.UserRole)]
+    //[Produces("application/json")]
     [Route("api")]
     public class EmployeesController : WebGateControllerBase
     {
@@ -24,7 +24,7 @@ namespace WebGate.Api.Controllers
         [ProducesResponseType(typeof(AbstractResponse), 201)]
         public async Task<IActionResult> CreateUser([FromBody] EmployeeRequest request)
         {
-            var userId = User.GetUserId();
+            var userId = 0; // User.GetUserId();
             var response = await _service.CreateEmployeeAsync(userId, request);
             return GetActionResult(response);
         }

@@ -1,10 +1,7 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebGate.Api.Extensions;
 using WebGate.EntityFramework;
-using WebGate.EntityFramework.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,14 +11,9 @@ builder.Services.AddDbContext<WebGateDbContext>(options =>
 
 builder.Services.AddCors(SetupCors);
 builder.Services.ConfigureIdentity();
+builder.Services.ConfigureSwagger();
+builder.Services.ConfigureDependencies();
 
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddJwtBearer(options =>
-//    {
-//        // Configure your JWT Bearer authentication options here
-//    });
-
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

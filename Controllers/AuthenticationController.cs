@@ -77,6 +77,7 @@ namespace WebGate.Api.Controllers
             {
                 var authClaims = new List<Claim>
                 {
+                    new Claim(Constants.UserIdClaimType, user.Id),
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 };
